@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled from "styled-components";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Nav from "./sidebar/Nav";
+import RecyclePage from "./Page/RecyclePage";
+import EatingPage from "./Page/EatingPage";
+import ElectricPage from "./Page/ElectricPage";
+
+const Center = styled.div`
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+`
+
+class App extends React.Component {
+  render() {
+    return(
+      <BrowserRouter>
+        <Center>
+          <Nav/>
+          <Routes>
+            <Route path="/recycle" element={<RecyclePage/>} />
+            <Route path="/eating" element={<EatingPage/>} />
+            <Route path="/electric" element={<ElectricPage/>} />
+          </Routes>
+        </Center>
+      </BrowserRouter>
+    );
+  }
 }
 
 export default App;
