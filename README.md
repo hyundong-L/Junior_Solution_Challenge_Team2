@@ -1,5 +1,4 @@
-# GDSC Sangmyung Solution Challenge
-### Juinor Team 2
+# GDSC Sangmyung Solution Challenge - Juinor Team 2
 
 
 **Project Topic**
