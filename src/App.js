@@ -9,6 +9,7 @@ import ElectricPage from "./Page/ElectricPage";
 import { Component } from "react";
 import Title from './Todolist/Title'
 import Content from './Todolist/Content'
+import MainPage from "./Page/MainPage";
 
 const Center = styled.div`
   height: 100vh;
@@ -21,7 +22,7 @@ class App extends React.Component {
     return(
       <BrowserRouter>
         <Center>
-          
+          <MainPage/>
           <Nav/>
           <Routes>
             <Route path="/recycle" element={<RecyclePage/>} />
