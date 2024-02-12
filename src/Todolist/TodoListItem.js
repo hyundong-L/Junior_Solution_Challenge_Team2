@@ -1,4 +1,5 @@
 import { Component } from "react";
+import "./design/TodoListItem.css";
 
 export default class TodoListItem extends Component {
     checkItem() {
@@ -11,10 +12,10 @@ export default class TodoListItem extends Component {
     }
     render() {
         return (
-            <li id={"todo-item"+this.props.id}>
+            <li classname="todoitem" id={"todo-item"+this.props.id}>
                 <input type="button" value="✅" onClick={()=>{this.checkItem()}}/>
                 {this.props.text}
-                <input type="button" value="❌" onClick={()=>{this.props.delete(this.props.id)}}/>
+                    <input type="button" value="❌" onClick={()=>{this.props.delete(this.props.id)}}/>
             </li>
         )
     }

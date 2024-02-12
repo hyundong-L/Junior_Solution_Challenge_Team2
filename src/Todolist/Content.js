@@ -1,6 +1,7 @@
 import { Component } from "react";
 import TodoList from "./TodoList"
 import TodoListItem from "./TodoListItem";
+import "./design/Content.css";
 
 export default class Content extends Component {
     constructor(props) {
@@ -36,9 +37,9 @@ export default class Content extends Component {
     }
     render() {
         return (
-            <div>
+            <div classname="inputContainer">
                 <input autocomplete="off" id="inputText" type="text" placeholder="입력"></input>
-                <input type="button" value="↩"
+                <input id="sumitButton" type="button" value="↩"
                    onClick={()=>{ this.addItem() }} 
                 />
                 <TodoList items={this.state.items}/>

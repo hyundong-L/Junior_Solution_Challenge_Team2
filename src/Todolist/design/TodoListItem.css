@@ -1,0 +1,21 @@
+.todoitem{list-style-type: none;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+
+    size: 100px;
+}
+
+.todoitem input[type="button"]{background-color: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    outline: none;
+}
+
+.todoitem input[type="button"]:hover{color: #007bff;
+}
