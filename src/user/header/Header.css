@@ -1,0 +1,29 @@
+.nav {
+    display: flex;
+    flex-direction: row;
+    margin-left: 0.5rem;
+    width: 50%;
+    position: fixed;
+    height: 3rem;
+    place-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 1%;
+    left: 66%;
+}
+
+.forLink {
+    margin-left: 1rem;
+    font-size: 0.875rem;
+    color: #000000;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    background-color: #28c053;
+
+}
+
+.user-id {
+    margin-right: 1rem;
+    color: black;
+}
