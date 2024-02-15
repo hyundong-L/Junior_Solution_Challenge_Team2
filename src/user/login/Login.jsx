@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Navigate, Link } from 'react-router-dom'
 import { doSignInWithEmailAndPassword, doSendEmailVerification } from '../../firebase/auth'
-import { useAuth } from "../authContext/AuthContext"
+import { useAuth } from '../authContext/AuthContext'
 import './Login.css'
 
 const Login = () => {

@@ -1,22 +1,32 @@
-.icons-list{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 600px;
-    flex-direction: column;
-  }
-  .button{
-      cursor:pointer;
-      transition: transform 300ms ease;
-      font-size: 100px;
-  }
-  .red{
-    color:rgb(0, 0, 0);
-  }
-  h3{
-    height: 30px;
-    width: 100px;
-  }
-  .button:hover{
-      transform: scale(1.1);
-  }
+.icons-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  flex-direction: column;
+}
+
+.Like-button {
+  cursor: pointer;
+  transition: transform 300ms ease;
+  font-size: 100px;
+}
+
+.button on{
+  cursor: pointer;
+  transition: transform 300ms ease;
+  font-size: 100px;
+}
+
+.red {
+  color: rgb(0, 0, 0);
+}
+
+.Like-h3 {
+  height: 30px;
+  width: 100px;
+}
+
+.Like-button:hover {
+  transform: scale(1.1);
+}
