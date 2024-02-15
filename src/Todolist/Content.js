@@ -10,12 +10,12 @@ export default class Content extends Component {
         this.state = {
             itemNum: 0,
             items: [
-             ]
+            ]
         };
     }
 
     deleteItem(num) {
-        const selected = document.querySelector('#todo-item' +num);
+        const selected = document.querySelector('#todo-item' + num);
         if (selected) {
             selected.remove();
         }
@@ -27,22 +27,22 @@ export default class Content extends Component {
             const tempArr = [...this.state.items];
             tempArr.push(<TodoListItem
                 id={this.state.itemNum++}
-                text={inputText.value} 
-                delete={(num)=>{this.deleteItem(num)}} />);
+                text={inputText.value}
+                delete={(num) => { this.deleteItem(num) }} />);
             this.setState({
                 items: tempArr
             })
-            inputText.value=""
+            inputText.value = ""
         }
     }
     render() {
         return (
-            <div classname="inputContainer">
-                <input autocomplete="off" id="inputText" type="text" placeholder="입력"></input>
+            <div className="inputContainer">
+                <input autoComplete="off" id="inputText" type="text" placeholder="입력"></input>
                 <input id="sumitButton" type="button" value="↩"
-                   onClick={()=>{ this.addItem() }} 
+                    onClick={() => { this.addItem() }}
                 />
-                <TodoList items={this.state.items}/>
+                <TodoList items={this.state.items} />
             </div>
         );
     }
