@@ -1,0 +1,96 @@
+.R-container {
+    height: 55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 30%;
+    color: #4b5563;
+    padding: 1rem;
+    box-shadow: 0 0.05rem 0.3rem #28c053;
+    border-radius: 0.5rem;
+}
+
+.R-card {
+    color: black;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.R-title {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #1f2937;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.R-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.R-form-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.R-button, .input-field {
+    box-sizing: border-box;
+}
+
+.input-field {
+    width: 100%;
+    margin-top: 0.25rem;
+    padding: 0.5rem 1rem;
+    color: #000000;
+    background-color: white;
+    border: 1px solid hsl(145, 82%, 37%);
+    border-radius: 0.5rem;
+}
+
+.input-field:focus {
+    border-color: green;
+}
+
+.error-message {
+    color: #e53e3e;
+    font-weight: bold;
+}
+
+.R-button {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    color: #ffffff;
+    font-weight: 500;
+    border-radius: 0.4rem;
+    transition: background-color 0.3s box-shadow 0.3s;
+    margin-top: 5%;
+    border: none;
+}
+
+.R-button.active {
+    background-color: #28c053;
+}
+
+.R-button.disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+.additional-info {
+    margin-top: 10%;
+    font-size: small;
+    text-align: center;
+}
+
+.login-link {
+    text-decoration: underline;
+    font-weight: bold;
+    color: black;
+}

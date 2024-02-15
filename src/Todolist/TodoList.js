@@ -3,6 +3,7 @@ import { Component } from "react";
 export default class TodoList extends Component {
     render() {
         return (
+<<<<<<< HEAD
             <ul style={{
                 listStyleType: "none",
                 padding: 0,
@@ -21,6 +22,9 @@ export default class TodoList extends Component {
                     </li>
                 ))}
             </ul>
+=======
+            <ul> {this.props.items} </ul>
+>>>>>>> 48fc2a5354532e4236ab8a1303b6fdb0baab562d
         );
     }
 }

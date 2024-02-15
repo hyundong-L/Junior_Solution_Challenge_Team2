@@ -1,4 +1,5 @@
 import PictureUpload from "../Picture/PictureUpload";
+import Nav from "../sidebar/Nav";
 
 const EatingPage=()=>{
     return(

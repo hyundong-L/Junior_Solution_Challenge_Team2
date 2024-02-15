@@ -2,6 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import NavItem from "./NavItem";
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from "../user/authContext/AuthContext";
 
 const Side = styled.div`
   display: flex;
@@ -33,6 +35,9 @@ const MenuItem = styled(NavLink)`
 `;
 
 function Nav() {
+  const navigate = useNavigate()
+  const { userLoggedIn, currentUser } = useAuth();
+
   const menus = [
     { name: "재활용", path: "/recycle" },
     { name: "식습관", path: "/eating" },
@@ -40,15 +45,24 @@ function Nav() {
   ];
 
   return (
-    <Side>
-      <Menu>
-        {menus.map((menu, index) => (
-          <MenuItem to={menu.path} exact key={index} activeClassName="active">
-            <NavItem menu={menu} />
-          </MenuItem>
-        ))}
-      </Menu>
-    </Side>
+    <>
+      {userLoggedIn
+        ?
+        <>
+          <Side>
+            <Menu>
+              {menus.map((menu, index) => (
+                <MenuItem to={menu.path} exact key={index} activeClassName="active">
+                  <NavItem menu={menu} />
+                </MenuItem>
+              ))}
+            </Menu>
+          </Side>
+        </>
+        :
+        <></>
+      }
+    </>
   );
 }
 

@@ -1,0 +1,97 @@
+.L-container {
+    height: 55vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 30%;
+    color: #4b5563;
+    padding: 1rem;
+    box-shadow: 0 0.05rem 0.3rem #28c053;
+    border-radius: 0.5rem;
+}
+
+.L-card {
+    color: black;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.L-title {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #1f2937;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.L-form {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.L-form-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.button, .input {
+    box-sizing: border-box;
+}
+
+.input {
+    width: 100%;
+    margin-top: 0.25rem;
+    padding: 0.8rem 3rem;
+    color: #000000;
+    background-color: white;
+    border: 1px solid hsl(145, 82%, 37%);
+    border-radius: 0.5rem;
+    padding-left: 1rem;
+}
+
+.input:focus {
+    border-color: #2db115;
+}
+
+.error {
+    color: #e53e3e;
+    font-weight: 600;
+}
+
+.button {
+    width: 100%;
+    padding: 0.7rem 2rem;
+    color: #ffffff;
+    font-weight: 500;
+    border-radius: 0.4rem;
+    border: none;
+}
+
+.button.active {
+    background-color: #28c053;
+}
+
+.button.disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+.forCreateAccountLine {
+    margin-top: 10%;
+    text-align: center;
+    font-size: small;
+}
+
+.linkToRegister {
+    text-decoration: underline;
+    font-weight: bold;
+    color: black;
+}
