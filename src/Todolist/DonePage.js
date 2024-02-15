@@ -3,7 +3,7 @@ import { Component } from "react";
 export default class DonePage extends Component {
     render() {
         return (
-            <div classname="title">
+            <div className="title">
                 <h2>Done</h2>
                 <ul>
                     {this.props.doneItems.map((item, index) => (
