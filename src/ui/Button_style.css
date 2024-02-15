@@ -12,7 +12,7 @@
   font-size: 100px;
 }
 
-.button on{
+.button-on {
   cursor: pointer;
   transition: transform 300ms ease;
   font-size: 100px;

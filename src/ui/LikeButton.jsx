@@ -27,7 +27,7 @@ class LikeButton extends React.Component {
                     {this.state.isChecked ?
                         <EyeInvisibleOutlined className="Like-button" onClick={this.onClick} />
                         :
-                        <EyeOutlined className="button on" onClick={this.onClick} />
+                        <EyeOutlined className="button-on" onClick={this.onClick} />
                     }
                     <h3 className='Like-h3'>{this.state.notice}</h3>
                 </div>

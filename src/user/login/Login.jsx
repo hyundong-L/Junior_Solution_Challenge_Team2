@@ -80,7 +80,7 @@ const Login = () => {
                         <button
                             type="submit"
                             disabled={isSigningIn}
-                            className={`button ${isSigningIn ? 'disabled' : 'active'}`}
+                            className={`login-button ${isSigningIn ? 'disabled' : 'active'}`}
                         >
                             {isSigningIn ? 'Signing In...' : 'Sign In'}
                         </button>
