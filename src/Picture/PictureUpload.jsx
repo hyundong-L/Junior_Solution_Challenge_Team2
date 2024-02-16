@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import PicInPut from "../ui/PicInPut";
+import { getStorage, ref, uploadString } from "firebase/storage";
+import { v4 as uuidv4 } from "uuid";
 
 const Container = styled.div`
   display: flex;
@@ -37,7 +39,14 @@ const UploadButton = styled.label`
 const PictureUpload = () => {
   const [imageData, setImageData] = useState(null);
 
-  const handleImageUpload = (dataUrl) => {
+  const handleImageUpload = async (dataUrl) => {
+    // evt.preventDefault();
+    const storage = getStorage();
+    const fileRef = ref(storage, uuidv4());
+
+    const response = await uploadString(fileRef, dataUrl, 'data_url');
+    console.log(response);
+
     setImageData(dataUrl);
   };
 
