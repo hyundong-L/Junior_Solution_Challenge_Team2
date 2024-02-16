@@ -1,13 +1,23 @@
 {
+<<<<<<< HEAD
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+=======
+    // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+    // 기존 특성에 대한 설명을 보려면 가리킵니다.
+    // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+>>>>>>> 47292f74bd568db077a2a2e69a71bdd4ad1942a3
     "version": "0.2.0",
     "configurations": [
         {
             "type": "chrome",
             "request": "launch",
+<<<<<<< HEAD
             "name": "Launch Chrome against localhost",
+=======
+            "name": "localhost에 대해 Chrome 시작",
+>>>>>>> 47292f74bd568db077a2a2e69a71bdd4ad1942a3
             "url": "http://localhost:8080",
             "webRoot": "${workspaceFolder}"
         }

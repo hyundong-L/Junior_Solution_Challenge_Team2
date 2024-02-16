@@ -18,10 +18,10 @@ export default class TodoListItem extends Component {
      render() {
         return (
             <ul> 
-                <li class="todo-item" id={"todo-item"+this.props.id}>
+                <li class="todo-item" id={"todo-item"+this.props.id} onClick={this.props.moveToDonePage}>
                     <input type="button" value="✅" onClick={()=>{this.checkItem()}}/>
-                        {this.props.text}
-                    <input type="button" value="❌" onClick={()=>{this.props.delete(this.props.id)}}/>
+                    {this.props.text}
+                        <input type="button" value="❌" onClick={()=>{this.props.delete(this.props.id)}}/>
                 </li>
             </ul>
         )
