@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
+const StyledPicarea = styled.div`
+  width: calc(100% - 32px);
+  padding: 16px;
+  font-size: 16px;
+  line-height: 20px;
+`;
+
 const PicInPut = ({ onImageUpload }) => {
   const [uploadImgUrl, setUploadImgUrl] = useState("");
 
@@ -23,12 +30,5 @@ const PicInPut = ({ onImageUpload }) => {
     </StyledPicarea>
   );
 };
-
-const StyledPicarea = styled.div`
-  width: calc(100% - 32px);
-  padding: 16px;
-  font-size: 16px;
-  line-height: 20px;
-`;
 
 export default PicInPut;

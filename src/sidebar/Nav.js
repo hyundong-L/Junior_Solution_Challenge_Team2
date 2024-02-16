@@ -52,7 +52,7 @@ function Nav() {
           <Side>
             <Menu>
               {menus.map((menu, index) => (
-                <MenuItem to={menu.path} exact key={index} activeClassName="active">
+                <MenuItem to={menu.path} exact="true" key={index} activeclassname="active">
                   <NavItem menu={menu} />
                 </MenuItem>
               ))}
