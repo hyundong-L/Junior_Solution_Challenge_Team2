@@ -14,6 +14,7 @@ export default class TodoListItem extends Component {
         } else {
             checkComponent.style.cssText = "text-decoration: line-through";
         }
+        
     }
      render() {
         return (
