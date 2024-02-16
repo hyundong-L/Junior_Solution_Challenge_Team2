@@ -1,4 +1,4 @@
-.todoitem{list-style-type: none;
+.todo-item{list-style-type: none;
     margin: 10px 0;
     padding: 10px;
     border: 1px solid #ccc;
@@ -9,7 +9,7 @@
     size: 100px;
 }
 
-.todoitem input[type="button"]{background-color: transparent;
+.todo-item input[type="button"]{background-color: transparent;
     border: none;
     font-size: 20px;
     cursor: pointer;
@@ -17,5 +17,5 @@
     outline: none;
 }
 
-.todoitem input[type="button"]:hover{color: #007bff;
+.todo-item input[type="button"]:hover{color: #007bff;
 }

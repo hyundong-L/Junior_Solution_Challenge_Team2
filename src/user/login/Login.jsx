@@ -4,6 +4,9 @@ import { doSignInWithEmailAndPassword, doSendEmailVerification } from '../../fir
 import { useAuth } from '../authContext/AuthContext'
 import './Login.css'
 
+
+import { getAuth, setPersistence, browserSessionPersistence } from "firebase/auth"; // Firebase Authentication 모듈에서 필요한 함수와 객체를 가져옵니다.
+
 const Login = () => {
     const { userLoggedIn } = useAuth()
 
@@ -17,6 +20,9 @@ const Login = () => {
         if (!isSigningIn) {
             setIsSigningIn(true)
             try {    //로그인 성공
+                const auth = getAuth(); // Firebase Authentication의 인증 객체를 가져옵니다.
+                await setPersistence(auth, browserSessionPersistence); // 인증 정보의 지속성을 설정합니다.
+
                 await doSignInWithEmailAndPassword(email, password)
                 await doSendEmailVerification();
             } catch (error) { //로그인 실패
