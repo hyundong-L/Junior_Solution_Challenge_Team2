@@ -67,8 +67,8 @@ const PictureUpload = () => {
       )}
 
       {/* 이미지 업로드 버튼 */}
-      <UploadButton>
-        <input type="file" accept="image/*" onChange={handleImageUpload} />
+      <UploadButton onChange={handleImageUpload}>
+        {/* <input type="submit" accept="image/*" onChange={handleImageUpload} /> */}
         <span>Upload Image</span>
       </UploadButton>
     </Container>
