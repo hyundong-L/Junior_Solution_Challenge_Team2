@@ -1,5 +1,5 @@
 import React from 'react';
-import { EyeInvisibleOutlined, EyeOutlined } from '@ant-design/icons';
+import { EyeFilled , EyeOutlined } from '@ant-design/icons';
 import './Button_style.css';
 
 class LikeButton extends React.Component {
@@ -25,7 +25,7 @@ class LikeButton extends React.Component {
             <React.Fragment>
                 <div className="icons-list">
                     {this.state.isChecked ?
-                        <EyeInvisibleOutlined className="Like-button" onClick={this.onClick} />
+                        <EyeFilled className="Like-button" onClick={this.onClick} />
                         :
                         <EyeOutlined className="button-on" onClick={this.onClick} />
                     }
