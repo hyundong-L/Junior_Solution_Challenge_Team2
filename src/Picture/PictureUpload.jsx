@@ -3,7 +3,6 @@ import styled from "styled-components";
 import PicInPut from "../ui/PicInPut";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from "../firebase/firebase";
-import {v4 as uuidv4} from "uuid";
 import { useAuth } from "../user/authContext/AuthContext";
 
 const Container = styled.div`
@@ -43,7 +42,8 @@ const PictureUpload = () => {
   const { currentUser } = useAuth();
 
   const handleImageUpload = async (dataUrl) => {
-    const fileRef = ref(storage, `Eating/${currentUser.email + " - " + uuidv4()}`);
+    //이름은 파일 이름으로 추가되게 하기
+    const fileRef = ref(storage, `Eating/${currentUser.email}`);
 
     // 파일 업로드
     await uploadBytes(fileRef, dataUrl);
@@ -51,7 +51,7 @@ const PictureUpload = () => {
     // 업로드된 파일의 다운로드 URL 가져오기
     const downloadURL = await getDownloadURL(fileRef);
 
-    setImageData(dataUrl);
+    // setImageData(URL.createObjectURL(file));
   };
 
   return (
@@ -68,7 +68,6 @@ const PictureUpload = () => {
 
       {/* 이미지 업로드 버튼 */}
       <UploadButton onChange={handleImageUpload}>
-        {/* <input type="submit" accept="image/*" onChange={handleImageUpload} /> */}
         <span>Upload Image</span>
       </UploadButton>
     </Container>

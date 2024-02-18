@@ -17,6 +17,8 @@
     position: absolute;
     top: 21%;
     left: 36.5%;
+
+    transform: translate(-21%, -36.5%);
 }
 
 .eating-text{
@@ -24,6 +26,8 @@
     position: absolute;
     top: 14.5%;
     left: 61%;
+
+    transform: translate(-14.5, -61);
 }
 
 .electric-text{
@@ -31,4 +35,6 @@
     position: absolute;
     top: 34%;
     left: 65%;
+
+    transform: translate(-34%, -65%);
 }

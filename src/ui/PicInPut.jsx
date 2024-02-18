@@ -25,7 +25,6 @@ const PicInPut = ({ onImageUpload }) => {
 
   return (
     <StyledPicarea>
-      
       <input type="file" accept="image/*" onChange={onchangeImageUpload} />
     </StyledPicarea>
   );
