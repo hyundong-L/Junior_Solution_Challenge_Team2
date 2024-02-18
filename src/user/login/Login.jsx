@@ -100,7 +100,7 @@ const Login = () => {
                 </div>
             </main>
 
-            <img className="sprout" src={Image}/>
+            <img className="L-sprout" src={Image}/>
         </div>
     )
 }

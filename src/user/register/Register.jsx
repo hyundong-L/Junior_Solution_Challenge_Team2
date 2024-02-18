@@ -3,6 +3,7 @@ import { Navigate, Link } from 'react-router-dom'
 import { useAuth } from '../authContext/AuthContext'
 import { doCreateUserWithEmailAndPassword, checkEmailExistence } from '../../firebase/auth'
 import './Register.css'
+import Image from "../image/Login Image.jpeg"
 
 const Register = () => {
     const [email, setEmail] = useState('')
@@ -113,6 +114,8 @@ const Register = () => {
                     </form>
                 </div>
             </main>
+
+            <img className="R-sprout" src={Image}/>
         </>
     )
 }
