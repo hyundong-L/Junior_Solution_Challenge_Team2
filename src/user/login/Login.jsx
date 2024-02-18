@@ -3,7 +3,7 @@ import { Navigate, Link } from 'react-router-dom'
 import { doSignInWithEmailAndPassword, doSendEmailVerification } from '../../firebase/auth'
 import { useAuth } from '../authContext/AuthContext'
 import './Login.css'
-
+import Image from "../image/Login Image.jpeg"
 
 import { getAuth, setPersistence, browserSessionPersistence } from "firebase/auth"; // Firebase Authentication 모듈에서 필요한 함수와 객체를 가져옵니다.
 
@@ -99,6 +99,8 @@ const Login = () => {
                     </p>
                 </div>
             </main>
+
+            <img className="sprout" src={Image}/>
         </div>
     )
 }
