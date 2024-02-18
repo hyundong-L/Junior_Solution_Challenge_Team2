@@ -46,7 +46,7 @@ const Login = () => {
 
     return (
         <div>
-            {userLoggedIn && (<Navigate to={'/treepage'} replace={true} />)}
+            {userLoggedIn && (<Navigate to={'/homepage'} replace={true} />)}
 
             <main className="L-container">
                 <div className="L-card">

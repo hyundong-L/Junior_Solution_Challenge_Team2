@@ -12,7 +12,7 @@ import Header from "./user/header/Header";
 import RecyclePage from "./Page/RecyclePage";
 import EatingPage from "./Page/EatingPage";
 import ElectricPage from "./Page/ElectricPage";
-import TreePage from "./Page/TreePage";
+import HomePage from "./Page/HomePage";
 
 const Center = styled.div`
   height: 100vh;
@@ -35,7 +35,7 @@ function App() {
             <Route path="/recycle" element={<RecyclePage />} />
             <Route path="/eating" element={<EatingPage />} />
             <Route path="/electric" element={<ElectricPage />} />
-            <Route path="/treepage" element={<TreePage />} />
+            <Route path="/homepage" element={<HomePage />} />
           </Routes>
         </Center>
       </BrowserRouter>
