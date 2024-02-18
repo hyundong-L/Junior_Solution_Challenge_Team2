@@ -1,7 +1,7 @@
 import React from "react";
-import Image from "../user/image/Tree Image.jpg";
+import Image from "../image/Tree Image.jpg"
 
-function TreePage() {
+const TreePage=()=>{
     return (
         <div>
             <h1>Tree Page</h1>

@@ -35,6 +35,7 @@ function App() {
             <Route path="/recycle" element={<RecyclePage />} />
             <Route path="/eating" element={<EatingPage />} />
             <Route path="/electric" element={<ElectricPage />} />
+            <Route path="/treepage" element={<TreePage />} />
           </Routes>
         </Center>
       </BrowserRouter>

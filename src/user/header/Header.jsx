@@ -14,7 +14,7 @@ const Header = () => {
                     ?
                     <>
                         <div className='user-id'>{currentUser.email}</div>
-                        <button onClick={() => { doSignOut().then(() => { navigate('/login') }) }} className='forLink'>Logout</button>
+                        <button onClick={() => { doSignOut().then(() => { navigate('/') }) }} className='forLink'>Logout</button>
                     </>
                     :
                     <></>

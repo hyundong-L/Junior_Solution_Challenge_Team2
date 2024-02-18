@@ -10,7 +10,7 @@ export default class Content extends Component {
         this.state = {
             itemNum: 0,
             items: [
-             ]
+            ]
         };
     }
 
