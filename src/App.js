@@ -12,6 +12,7 @@ import Header from "./user/header/Header";
 import RecyclePage from "./Page/RecyclePage";
 import EatingPage from "./Page/EatingPage";
 import ElectricPage from "./Page/ElectricPage";
+import TreePage from "./Page/TreePage";
 
 const Center = styled.div`
   height: 100vh;

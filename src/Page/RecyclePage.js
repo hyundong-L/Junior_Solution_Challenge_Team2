@@ -21,11 +21,11 @@ export default class RecyclePage extends Component {
                         <Content />
                     </div>
                 </div>
-                <div style={{ flex: 1, marginLeft: "20px" }}>
+                <div style={{ flex: 1, marginLeft: "40px" }}>
                     <div style={{ marginBottom: "20px" }}>
                         <h1 style={{ color: "#333", textAlign: "center", fontSize: "24px", marginTop: 0}}>Done</h1>
                     </div>
-                    <Content />
+                    {/* <Content /> */}
                 </div>
             </div>
         );

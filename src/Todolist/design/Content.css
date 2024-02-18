@@ -1,16 +1,19 @@
-.inputContainer{ display: flex;
+.inputContainer{
+    display: flex;
     align-items: center;
     width: 300px;
     margin: 0 auto;}
 
-#inputText{flex: 1;
+#inputText{
+    flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px 0 0 5px;
     font-size: 16px;
     outline: none;}
 
-#sumitButton{background-color: #007bff;
+#sumitButton{
+    background-color: #007bff;
     color: #fff;
     border: none;
     padding: 10px 20px;
