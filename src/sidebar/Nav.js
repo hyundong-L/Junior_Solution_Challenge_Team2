@@ -46,7 +46,7 @@ function Nav() {
 
   return (
     <>
-      {userLoggedIn
+      {userLoggedIn && window.location.pathname !== "/treepage"
         ?
         <>
           <Side>
