@@ -1,11 +1,11 @@
 .R-container {
-    height: 55vh;
+    height: 45vh;
     display: flex;
     justify-content: center;
     align-items: center;
 
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -93,4 +93,18 @@
     text-decoration: underline;
     font-weight: bold;
     color: black;
+}
+
+.R-sprout {
+    width: 70%;
+
+    display: block;
+    margin: 0 auto;
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: -1;
 }
