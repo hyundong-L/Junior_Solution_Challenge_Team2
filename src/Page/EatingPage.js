@@ -8,6 +8,7 @@ const EatingPage=()=>{
             <h1>Eating habits Page</h1>
             <LikeButton/>
             <PictureUpload/>
+            <PictureFeed/>
         </div>
     );
 }
