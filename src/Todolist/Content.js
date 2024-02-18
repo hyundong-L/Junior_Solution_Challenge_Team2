@@ -37,8 +37,8 @@ export default class Content extends Component {
     }
     render() {
         return (
-            <div classname="inputContainer">
-                <input autocomplete="off" id="inputText" type="text" placeholder="입력"></input>
+            <div className="inputContainer">
+                <input autoComplete="off" id="inputText" type="text" placeholder="입력"></input>
                 <input id="sumitButton" type="button" value="↩"
                    onClick={()=>{ this.addItem() }} 
                 />

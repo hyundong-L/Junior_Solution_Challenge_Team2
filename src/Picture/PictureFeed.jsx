@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { ref, listAll, getDownloadURL } from "firebase/storage";
 import { storage } from "../firebase/firebase";
-import PictureUpload from "./PictureUpload";
 
 const FeedContainer = styled.div`
   display: flex;
@@ -23,7 +22,7 @@ const PictureFeed = () => {
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const storageRef = ref(storage, "Eating");
+        const storageRef = ref(storage, "Eating/");
         const files = await listAll(storageRef);
         const urls = await Promise.all(
           files.items.map(async (item) => {
