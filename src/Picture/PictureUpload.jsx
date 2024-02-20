@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import PicInPut from "../ui/PicInPut";
-import { ref, uploadString, getDownloadURL } from "firebase/storage";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from "../firebase/firebase";
+import {v4 as uuidv4} from "uuid";
 import { useAuth } from "../user/authContext/AuthContext";
-import { v4 as uuidv4 } from "uuid";
 
 const Container = styled.div`
   display: flex;
@@ -43,16 +43,15 @@ const PictureUpload = () => {
   const { currentUser } = useAuth();
 
   const handleImageUpload = async (dataUrl) => {
-    //이름은 파일 이름으로 추가되게 하기
-    const fileRef = await uploadString(ref(storage, `Eating/${currentUser.email}` + " - " + uuidv4()), dataUrl, 'data_url');
+    const fileRef = ref(storage, `Eating/${currentUser.email + " - " + uuidv4()}`);
 
     // 파일 업로드
-    // await uploadBytes(fileRef, dataUrl);
+    await uploadBytes(fileRef, dataUrl);
 
     // 업로드된 파일의 다운로드 URL 가져오기
-    const downloadURL = await getDownloadURL(fileRef.ref);
+    const downloadURL = await getDownloadURL(fileRef);
 
-    // setImageData(URL.createObjectURL(file));
+    setImageData(dataUrl);
   };
 
   return (
@@ -69,6 +68,7 @@ const PictureUpload = () => {
 
       {/* 이미지 업로드 버튼 */}
       <UploadButton onChange={handleImageUpload}>
+        {/* <input type="submit" accept="image/*" onChange={handleImageUpload} /> */}
         <span>Upload Image</span>
       </UploadButton>
     </Container>

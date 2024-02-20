@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { ref, listAll, getDownloadURL } from "firebase/storage";
 import { storage } from "../firebase/firebase";
+import LikeButton from "../ui/LikeButton";
 
 const FeedContainer = styled.div`
   display: flex;
@@ -11,13 +12,14 @@ const FeedContainer = styled.div`
 `;
 
 const ImageItem = styled.div`
+  position: relative;
   width: 200px;
   height: 200px;
   margin: 10px;
 `;
 
 const PictureFeed = () => {
-  const [imageUrls, setImageUrls] = useState([]);
+  const [imageData, setImageData] = useState([]);
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -27,10 +29,10 @@ const PictureFeed = () => {
         const urls = await Promise.all(
           files.items.map(async (item) => {
             const url = await getDownloadURL(item);
-            return url;
+            return { url, likes: 0 }; // 각 이미지에 대한 좋아요 수를 추가
           })
         );
-        setImageUrls(urls);
+        setImageData(urls);
       } catch (error) {
         console.error("Error fetching images:", error);
       }
@@ -38,11 +40,21 @@ const PictureFeed = () => {
     fetchImages();
   }, []);
 
+  const handleLike = (index) => {
+    setImageData(prevImageData => {
+      const newData = [...prevImageData];
+      newData[index].likes += 1; // 좋아요 수 증가
+      return newData;
+    });
+  };
+
   return (
     <FeedContainer>
-      {imageUrls.map((url, index) => (
+      {imageData.map((data, index) => (
         <ImageItem key={index}>
-          <img src={url} alt={`Image ${index}`} />
+          <img src={data.url} alt={`Image ${index}`} />
+          {/* LikeButton을 각 이미지 아래에 추가하고 좋아요 수와 클릭 이벤트 전달 */}
+          <LikeButton onLike={() => handleLike(index)} likes={data.likes} />
         </ImageItem>
       ))}
     </FeedContainer>
