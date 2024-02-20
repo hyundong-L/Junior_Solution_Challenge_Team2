@@ -8,16 +8,21 @@ const Header = () => {
     const navigate = useNavigate()
     const { userLoggedIn, currentUser } = useAuth();
 
+    // const handleLogout = async () =>{
+    //     await navigate("/");
+    //     await doSignOut();
+    // };
+
     return (
         <nav className='nav'>
-            { userLoggedIn
-                    ?
-                    <>
-                        <div className='user-id'>{currentUser.email}</div>
-                        <button onClick={() => { doSignOut().then(() => { navigate('/') }) }} className='forLink'>Logout</button>
-                    </>
-                    :
-                    <></>
+            {userLoggedIn
+                ?
+                <>
+                    <div className='user-id'>{currentUser.email}</div>
+                    <button onClick={() => { doSignOut().then(() => { navigate('/') }) }} className='forLink'>Logout</button>
+                </>
+                :
+                <></>
             }
         </nav>
     )

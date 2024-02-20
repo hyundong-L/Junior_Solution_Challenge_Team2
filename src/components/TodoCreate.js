@@ -1,11 +1,38 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { BsFillPlusSquareFill } from 'react-icons/bs';
+import { ref, push, set, query, orderByKey, limitToLast, onValue, get } from 'firebase/database';
+import { database } from '../firebase/firebase';
+import { useAuth } from '../user/authContext/AuthContext';
 
 const TodoCreate = ({ onSubmitHandler }) => {
   const [text, setText] = useState('');
   const [title, setTitle] = useState('');
   const id = useRef(0);
+
+  const { userLoggedIn, currentUser } = useAuth();
+
+  const db = database
+  const userEmail = currentUser.email.replace("@", "-").replace(".com", "");
+
+  useEffect(() => {
+    const todoRef = ref(db, `${userEmail}`);
+    const idQuery = query(todoRef, orderByKey(), limitToLast(1));
+
+    const getId = () => {
+      onValue(idQuery, (snapshot) => {
+        const data = snapshot.val();
+
+        if (data) {
+          const keys = Object.keys(data);
+          const lastKey = keys[0];
+          id.current = parseInt(lastKey) + 1;
+        }
+      });
+    };
+
+    getId();
+  })
 
   const handleSubmit = () => {
     if (!text || !title) {
@@ -20,10 +47,17 @@ const TodoCreate = ({ onSubmitHandler }) => {
       isDone: false,
     };
 
-    onSubmitHandler(newTodo);
-    id.current++;
-    setText('');
-    setTitle('');
+    const todoRef = ref(db, `${userEmail}/${newTodo.id}`);
+
+    set(todoRef, newTodo).then(() => {
+      onSubmitHandler(newTodo);
+      id.current++;
+      setText('');
+      setTitle('');
+    })
+      .catch((error) => {
+        console.error("error 발생", error);
+      });
   };
 
   return (
