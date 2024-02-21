@@ -26,7 +26,8 @@
   margin-left: 5px; 
   font-size: 12px; 
   font-family: Arial, sans-serif;
-  line-height: 0px;
+  margin-top: -60px;
+ 
 }
 
 .Like-button:hover {

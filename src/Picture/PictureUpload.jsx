@@ -11,7 +11,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 30vh;
 `;
 
 const ImageWrapper = styled.div`
@@ -23,21 +23,6 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const UploadButton = styled.label`
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-
-  input[type="file"] {
-    display: none;
-  }
-`;
-
 const PictureUpload = () => {
   const [imageData, setImageData] = useState(null);
   const { currentUser } = useAuth();
@@ -45,11 +30,12 @@ const PictureUpload = () => {
   const handleImageUpload = async (dataUrl) => {
     const fileRef = await uploadString(ref(storage, `Eating/${currentUser.email}` + " - " + uuidv4()), dataUrl, 'data_url');
 
-   
     // 업로드된 파일의 다운로드 URL 가져오기
     const downloadURL = await getDownloadURL(fileRef.ref);
 
     setImageData(dataUrl);
+
+    window.location.reload();
   };
 
   return (
@@ -63,12 +49,6 @@ const PictureUpload = () => {
           <img src={imageData} alt="Uploaded" />
         </ImageWrapper>
       )}
-
-      {/* 이미지 업로드 버튼 */}
-      <UploadButton onChange={handleImageUpload}>
-        {/* <input type="submit" accept="image/*" onChange={handleImageUpload} /> */}
-        <span>Upload Image</span>
-      </UploadButton>
     </Container>
   );
 };
