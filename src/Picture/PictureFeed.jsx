@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ref, listAll, getDownloadURL } from "firebase/storage";
 import { storage } from "../firebase/firebase";
 import LikeButton from "../ui/LikeButton";
+import "../Picture/PictureFeedPage.css"
 
 const FeedContainer = styled.div`
   display: flex;
@@ -16,11 +17,10 @@ const ImageItem = styled.div`
   width: 200px;
   height: 200px;
   margin: 10px;
-
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* 한 줄에 3개의 이미지 */
-  gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10%;
+  flex-direction: column-reverse;
 `;
 
 const PictureFeed = () => {
@@ -34,7 +34,7 @@ const PictureFeed = () => {
         const urls = await Promise.all(
           files.items.map(async (item) => {
             const url = await getDownloadURL(item);
-            return { url, likes: 0 }; 
+            return { url, likes: 0 };
           })
         );
         setImageData(urls);
@@ -48,7 +48,7 @@ const PictureFeed = () => {
   const handleLike = (index) => {
     setImageData(prevImageData => {
       const newData = [...prevImageData];
-      newData[index].likes += 1; 
+      newData[index].likes += 1;
       return newData;
     });
   };

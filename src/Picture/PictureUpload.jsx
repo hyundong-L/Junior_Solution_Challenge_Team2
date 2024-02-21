@@ -23,21 +23,6 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const UploadButton = styled.label`
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-
-  input[type="file"] {
-    display: none;
-  }
-`;
-
 const PictureUpload = () => {
   const [imageData, setImageData] = useState(null);
   const { currentUser } = useAuth();
@@ -49,6 +34,8 @@ const PictureUpload = () => {
     const downloadURL = await getDownloadURL(fileRef.ref);
 
     setImageData(dataUrl);
+
+    window.location.reload();
   };
 
   return (
@@ -62,12 +49,6 @@ const PictureUpload = () => {
           <img src={imageData} alt="Uploaded" />
         </ImageWrapper>
       )}
-
-      {/* 이미지 업로드 버튼 */}
-      <UploadButton onChange={handleImageUpload}>
-        {/* <input type="submit" accept="image/*" onChange={handleImageUpload} /> */}
-        <span>Upload Image</span>
-      </UploadButton>
     </Container>
   );
 };
