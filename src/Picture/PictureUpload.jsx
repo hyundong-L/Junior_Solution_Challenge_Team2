@@ -45,7 +45,6 @@ const PictureUpload = () => {
   const handleImageUpload = async (dataUrl) => {
     const fileRef = await uploadString(ref(storage, `Eating/${currentUser.email}` + " - " + uuidv4()), dataUrl, 'data_url');
 
-   
     // 업로드된 파일의 다운로드 URL 가져오기
     const downloadURL = await getDownloadURL(fileRef.ref);
 

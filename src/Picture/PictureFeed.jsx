@@ -4,7 +4,6 @@ import { ref, listAll, getDownloadURL } from "firebase/storage";
 import { storage } from "../firebase/firebase";
 import LikeButton from "../ui/LikeButton";
 
-
 const FeedContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -17,6 +16,11 @@ const ImageItem = styled.div`
   width: 200px;
   height: 200px;
   margin: 10px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 한 줄에 3개의 이미지 */
+  gap: 20px;
 `;
 
 const PictureFeed = () => {
@@ -53,7 +57,7 @@ const PictureFeed = () => {
     <FeedContainer>
       {imageData.map((data, index) => (
         <ImageItem key={index}>
-          <img src={data.url} alt={`Image ${index}`} />
+          <img src={data.url} alt={`Image ${index}`} className="feed-img" />
           {/* LikeButton을 각 이미지 아래에 추가하고 좋아요 수와 클릭 이벤트 전달 */}
           <LikeButton onLike={() => handleLike(index)} likes={data.likes} />
         </ImageItem>

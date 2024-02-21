@@ -2,75 +2,87 @@
 
 /* 전체 페이지 레이아웃 설정 */
 .eating-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  /* 페이지 제목 스타일 */
-  .eating-page h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  /* 이미지 업로드 및 피드 컨테이너 스타일 */
-  .picture-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
-  /* LikeButton 스타일 */
-  .like-button-container {
-    margin-bottom: 20px;
-  }
-  
-  /* PictureFeed 스타일 */
-  .picture-feed-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-  }
-  
-  .picture-feed-item {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    overflow: hidden;
-    border-radius: 10px;
-  }
-  
-  .picture-feed-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .picture-feed-item .like-button-container {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-  }
-  
-  .picture-feed-item .like-button-container .like-button {
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    margin-right: 5px;
-  }
-  
-  .picture-feed-item .like-button-container .like-button .icon {
-    font-size: 20px;
-  }
-  
-  .picture-feed-item .like-button-container .likes-count {
-    font-size: 14px;
-    font-weight: bold;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* 페이지 제목 스타일 */
+.eating-page h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* 이미지 업로드 및 피드 컨테이너 스타일 */
+.picture-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* LikeButton 스타일 */
+.like-button-container {
+  margin-bottom: 20px;
+}
+
+/* PictureFeed 스타일 */
+.picture-feed-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  font-size: 10%;
+}
+
+.picture-feed-item {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.picture-feed-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.picture-feed-item .like-button-container {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+}
+
+.picture-feed-item .like-button-container .like-button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.picture-feed-item .like-button-container .like-button .icon {
+  font-size: 20px;
+}
+
+.picture-feed-item .like-button-container .likes-count {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.feed-img {
+  /* width: 300px;
+  height: 150px;
+  object-fit: scale-down; */
+
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

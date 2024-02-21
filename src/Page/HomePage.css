@@ -12,7 +12,7 @@
     z-index: -1;
 }
 
-.recycle-text{
+.recycle-text {
     font-size: 150%;
     position: absolute;
     top: 21%;
@@ -21,7 +21,7 @@
     transform: translate(-21%, -36.5%);
 }
 
-.eating-text{
+.eating-text {
     font-size: 150%;
     position: absolute;
     top: 14.5%;
@@ -30,7 +30,7 @@
     transform: translate(-14.5, -61);
 }
 
-.electric-text{
+.electric-text {
     font-size: 150%;
     position: absolute;
     top: 34%;
