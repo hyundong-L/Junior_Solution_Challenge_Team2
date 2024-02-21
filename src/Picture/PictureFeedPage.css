@@ -82,7 +82,10 @@
 
   position: absolute;
   width: 100%;
-  top: 50%;
-  left: 50%;
+  margin-left: 10%;
   transform: translate(-50%, -50%);
+}
+
+.E-wrapper{
+  overflow: auto;
 }

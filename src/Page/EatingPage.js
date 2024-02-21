@@ -5,7 +5,7 @@ import "../Picture/PictureFeedPage.css"
 
 const EatingPage=()=>{
     return(
-        <div>
+        <div className="E-wrapper">
             <h1>Eating habits Page</h1>
             
             <PictureUpload/>
