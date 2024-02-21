@@ -1,0 +1,21 @@
+.todo-wrapper {
+    display: flex;
+    overflow: auto;
+    position: relative;
+}
+
+.create-todo {
+    width: 60vh;
+    padding-left: 2%;
+    padding-right: 2%;
+    border-right: 1px solid black;
+    overflow: auto;
+    position: sticky;
+    top: 0;
+}
+
+.R-right {
+    width: 60vh;
+    padding-left: 2%;
+    padding-right: 2%;
+}

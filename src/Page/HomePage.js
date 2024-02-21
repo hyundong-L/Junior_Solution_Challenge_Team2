@@ -4,15 +4,15 @@ import "./HomePage.css"
 import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
-    const navigate=useNavigate();
+    const navigate = useNavigate();
 
-    const goToRecycle=()=>{
+    const goToRecycle = () => {
         navigate("/recycle");
     }
-    const goToEating=()=>{
+    const goToEating = () => {
         navigate("/eating");
     }
-    const goToElectric=()=>{
+    const goToElectric = () => {
         navigate("/electric");
     }
 

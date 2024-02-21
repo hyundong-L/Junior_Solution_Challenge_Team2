@@ -10,14 +10,14 @@ const Header = () => {
 
     return (
         <nav className='nav'>
-            { userLoggedIn
-                    ?
-                    <>
-                        <div className='user-id'>{currentUser.email}</div>
-                        <button onClick={() => { doSignOut().then(() => { navigate('/') }) }} className='forLink'>Logout</button>
-                    </>
-                    :
-                    <></>
+            {userLoggedIn
+                ?
+                <>
+                    <div className='user-id'>{currentUser.email}</div>
+                    <button onClick={() => { doSignOut().then(() => { navigate('/') }) }} className='forLink'>Logout</button>
+                </>
+                :
+                <></>
             }
         </nav>
     )

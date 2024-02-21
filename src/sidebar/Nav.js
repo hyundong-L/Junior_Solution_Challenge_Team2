@@ -35,8 +35,8 @@ const MenuItem = styled(NavLink)`
 `;
 
 function Nav() {
-  const navigate = useNavigate()
-  const { userLoggedIn, currentUser } = useAuth();
+  const navigate=useNavigate();
+  const { userLoggedIn } = useAuth();
 
   const menus = [
     { name: "재활용", path: "/recycle" },

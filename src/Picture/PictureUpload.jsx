@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import PicInPut from "../ui/PicInPut";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { ref, uploadString, getDownloadURL } from "firebase/storage";
 import { storage } from "../firebase/firebase";
 import {v4 as uuidv4} from "uuid";
 import { useAuth } from "../user/authContext/AuthContext";
@@ -43,13 +43,11 @@ const PictureUpload = () => {
   const { currentUser } = useAuth();
 
   const handleImageUpload = async (dataUrl) => {
-    const fileRef = ref(storage, `Eating/${currentUser.email + " - " + uuidv4()}`);
+    const fileRef = await uploadString(ref(storage, `Eating/${currentUser.email}` + " - " + uuidv4()), dataUrl, 'data_url');
 
-    // 파일 업로드
-    await uploadBytes(fileRef, dataUrl);
-
+   
     // 업로드된 파일의 다운로드 URL 가져오기
-    const downloadURL = await getDownloadURL(fileRef);
+    const downloadURL = await getDownloadURL(fileRef.ref);
 
     setImageData(dataUrl);
   };
