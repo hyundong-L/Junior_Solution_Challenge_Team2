@@ -3,7 +3,7 @@ import ElectricPictureFeed from "../Picture/ElectricPictureFeed";
 
 const ElectricPage=()=>{
     return(
-        <div>
+        <div className="E-wrapper">
             <h1>Saving electricity Page</h1>
             <ElectricPictureUpload/>
             <ElectricPictureFeed/>

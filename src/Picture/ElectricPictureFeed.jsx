@@ -12,7 +12,6 @@ const FeedContainer = styled.div`
   align-items: center;
 `;
 
-
 const ImageItem = styled.div`
   position: relative;
   width: 200px;
