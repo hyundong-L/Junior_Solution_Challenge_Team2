@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { BsFillPlusSquareFill } from 'react-icons/bs';
-import { ref, push, set, query, orderByKey, limitToLast, onValue, get } from 'firebase/database';
+import { ref, set, query, orderByKey, limitToLast, onValue, get } from 'firebase/database';
 import { database } from '../firebase/firebase';
 import { useAuth } from '../user/authContext/AuthContext';
 
@@ -61,7 +61,7 @@ const TodoCreate = ({ onSubmitHandler }) => {
 
 
     const ListTodoRef = ref(db, `List/${newTodo.id}`);
-    const newTodoWithoutIsDone={...newTodo};
+    const newTodoWithoutIsDone = { ...newTodo };
     delete newTodoWithoutIsDone.isDone;
     set(ListTodoRef, newTodoWithoutIsDone)
       .catch((error) => {
@@ -102,7 +102,8 @@ const TodoCreate = ({ onSubmitHandler }) => {
 export default TodoCreate;
 
 const InputArea = styled.div`
-  display: flex;
+  margin-top: 10%;
+  display: -webkit-inline-box;
   justify-content: center;
   align-items: center;
   padding-bottom: 2rem;
@@ -119,14 +120,14 @@ const Label = styled.label`
 `;
 
 const Input = styled.input`
-  width: 200px;
-  height: 36px;
+  width: 13vh;
+  height: 2vw;
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 0 8px;
   font-size: 1rem;
 
   &.text {
-    width: 340px;
+    width: 20vh;
   }
 `;

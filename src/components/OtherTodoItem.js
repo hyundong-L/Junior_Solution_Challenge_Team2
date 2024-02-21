@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BsBookmarkCheckFill } from 'react-icons/bs';
+import { BsRecycle } from 'react-icons/bs';
 
 const TodoItemBlock = styled.li`
   display: flex;
@@ -28,17 +28,17 @@ const TodoItemBlock = styled.li`
 `;
 
 const OtherTodoItem = ({ title, body, id }) => {
-    return (
-        <TodoItemBlock key={id}>
-            <BsBookmarkCheckFill size={32} color={'#ddd'} cursor={'pointer'}/>
-            <div className="contents">
-                <p>
-                    <strong>{title}</strong>
-                </p>
-                <p>{body}</p>
-            </div>
-        </TodoItemBlock>
-    );
+  return (
+    <TodoItemBlock key={id}>
+      <BsRecycle size={32} color={'#ddd'} cursor={'pointer'} />
+      <div className="contents">
+        <p>
+          <strong>{title}</strong>
+        </p>
+        <p>{body}</p>
+      </div>
+    </TodoItemBlock>
+  );
 };
 
 export default OtherTodoItem;

@@ -6,6 +6,7 @@ import { database } from '../firebase/firebase';
 import { onValue, remove, update } from 'firebase/database';
 import { ref } from 'firebase/database';
 import OtherTodoList from '../components/OtherTodoList';
+import "./RecyclePage.css"
 
 
 function RecyclePage() {
@@ -78,25 +79,27 @@ function RecyclePage() {
   return (
     <div className="todo-wrapper">
       <section className="create-todo">
-        <h1 className="title"> To Do List</h1>
-        <TodoCreate onSubmitHandler={onSubmitHandler} />
+        {/* <h1 className="title"> To Do List</h1> */}
+        <OtherTodoList
+          todos={otherTodos}
+          listTitle={"모든 사람들의 투두리스트"}
+        />
       </section>
-      <OtherTodoList
-        todos={otherTodos}
-        listTitle={"모든 사람들의 투두리스트"}
-      />
-      <TodoList
-        todos={todos.filter((todo) => !todo.isDone)}
-        listTitle={'🔥 진행중 🔥'}
-        onToggle={onToggleHandler}
-        onDelete={onDeleteHandler}
-      />
-      <TodoList
-        todos={todos.filter((todo) => todo.isDone)}
-        listTitle={'🎉 완료 🎉'}
-        onToggle={onToggleHandler}
-        onDelete={onDeleteHandler}
-      />
+      <div className='R-right'>
+        <TodoCreate onSubmitHandler={onSubmitHandler} />
+        <TodoList
+          todos={todos.filter((todo) => !todo.isDone)}
+          listTitle={'🔥 진행중 🔥'}
+          onToggle={onToggleHandler}
+          onDelete={onDeleteHandler}
+        />
+        <TodoList
+          todos={todos.filter((todo) => todo.isDone)}
+          listTitle={'🎉 완료 🎉'}
+          onToggle={onToggleHandler}
+          onDelete={onDeleteHandler}
+        />
+      </div>
     </div>
   );
 }

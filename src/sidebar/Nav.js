@@ -35,7 +35,7 @@ const MenuItem = styled(NavLink)`
 `;
 
 function Nav() {
-  const navigate = useNavigate()
+  const navigate=useNavigate();
   const { userLoggedIn } = useAuth();
 
   const menus = [

@@ -8,11 +8,6 @@ const Header = () => {
     const navigate = useNavigate()
     const { userLoggedIn, currentUser } = useAuth();
 
-    // const handleLogout = async () =>{
-    //     await navigate("/");
-    //     await doSignOut();
-    // };
-
     return (
         <nav className='nav'>
             {userLoggedIn
