@@ -58,6 +58,15 @@ const TodoCreate = ({ onSubmitHandler }) => {
       .catch((error) => {
         console.error("error 발생", error);
       });
+
+
+    const ListTodoRef = ref(db, `List/${newTodo.id}`);
+    const newTodoWithoutIsDone={...newTodo};
+    delete newTodoWithoutIsDone.isDone;
+    set(ListTodoRef, newTodoWithoutIsDone)
+      .catch((error) => {
+        console.error("error 발생", error);
+      });
   };
 
   return (
@@ -79,7 +88,7 @@ const TodoCreate = ({ onSubmitHandler }) => {
           className="text"
           type="text"
           value={text}
-          placeholder="해야 할 일"
+          placeholder="할 일"
           onChange={(e) => {
             setText(e.target.value);
           }}
