@@ -23,7 +23,7 @@ const ImageWrapper = styled.div`
   }
 `;
 
-const PictureUpload = () => {
+const EatingPictureUpload = () => {
   const [imageData, setImageData] = useState(null);
   const { currentUser } = useAuth();
 
@@ -53,4 +53,4 @@ const PictureUpload = () => {
   );
 };
 
-export default PictureUpload;
+export default EatingPictureUpload;

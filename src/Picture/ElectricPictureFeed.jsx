@@ -24,13 +24,13 @@ const ImageItem = styled.div`
   flex-direction: column-reverse;
 `;
 
-const PictureFeed = () => {
+const ElectricPictureFeed = () => {
   const [imageData, setImageData] = useState([]);
 
   useEffect(() => {
     const fetchImages = async () => {
       try {
-        const storageRef = ref(storage, "Eating/");
+        const storageRef = ref(storage, "Electric/");
         const files = await listAll(storageRef);
         const urls = await Promise.all(
           files.items.map(async (item) => {
@@ -67,4 +67,4 @@ const PictureFeed = () => {
   );
 };
 
-export default PictureFeed;
+export default ElectricPictureFeed;
