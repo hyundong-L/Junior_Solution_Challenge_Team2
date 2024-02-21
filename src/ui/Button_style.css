@@ -2,20 +2,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 600px;
+  height: 100px;
   flex-direction: column;
 }
 
 .Like-button {
   cursor: pointer;
   transition: transform 300ms ease;
-  font-size: 100px;
+  font-size: 30px;
 }
 
 .button-on {
   cursor: pointer;
   transition: transform 300ms ease;
-  font-size: 100px;
+  font-size: 30px;
 }
 
 .red {
@@ -23,8 +23,10 @@
 }
 
 .Like-h3 {
-  height: 30px;
-  width: 100px;
+  margin-left: 5px; 
+  font-size: 12px; 
+  font-family: Arial, sans-serif;
+  line-height: 0px;
 }
 
 .Like-button:hover {

@@ -4,6 +4,7 @@ import { ref, listAll, getDownloadURL } from "firebase/storage";
 import { storage } from "../firebase/firebase";
 import LikeButton from "../ui/LikeButton";
 
+
 const FeedContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -29,7 +30,7 @@ const PictureFeed = () => {
         const urls = await Promise.all(
           files.items.map(async (item) => {
             const url = await getDownloadURL(item);
-            return { url, likes: 0 }; // 각 이미지에 대한 좋아요 수를 추가
+            return { url, likes: 0 }; 
           })
         );
         setImageData(urls);
@@ -43,7 +44,7 @@ const PictureFeed = () => {
   const handleLike = (index) => {
     setImageData(prevImageData => {
       const newData = [...prevImageData];
-      newData[index].likes += 1; // 좋아요 수 증가
+      newData[index].likes += 1; 
       return newData;
     });
   };

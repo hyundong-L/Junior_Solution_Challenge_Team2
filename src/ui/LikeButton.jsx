@@ -23,7 +23,7 @@ class LikeButton extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <div className="icons-list">
+                <div className="icons-button-container">
                     {this.state.isChecked ?
                         <EyeFilled className="Like-button" onClick={this.onClick} />
                         :
