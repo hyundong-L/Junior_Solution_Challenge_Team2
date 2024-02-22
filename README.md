@@ -8,3 +8,6 @@ Project Topic
 - [**Jiwon Choi**](https://github.com/z12witty)
 - [**Haeun Choi**](https://github.com/Haeun-00)
 
+**How to Start**
+1. npm install react-scripts
+2. npm start
