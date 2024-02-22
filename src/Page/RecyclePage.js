@@ -82,7 +82,7 @@ function RecyclePage() {
         {/* <h1 className="title"> To Do List</h1> */}
         <OtherTodoList
           todos={otherTodos}
-          listTitle={"모든 사람들의 투두리스트"}
+          listTitle={"Everyone's To-Do List"}
         />
       </section>
       <div className='R-right'>

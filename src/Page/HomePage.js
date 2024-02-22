@@ -19,9 +19,9 @@ const HomePage = () => {
     return (
         <div className="H-container">
             <img className="homeImage" src={Image} alt="Tree Image" />
-            <div className="recycle-text" onClick={goToRecycle}>재활용</div>
-            <div className="eating-text" onClick={goToEating}>식습관</div>
-            <div className="electric-text" onClick={goToElectric}>전기절약</div>
+            <div className="recycle-text" onClick={goToRecycle}>Recycle</div>
+            <div className="eating-text" onClick={goToEating}>Eating Habits</div>
+            <div className="electric-text" onClick={goToElectric}>Saving Electricity</div>
         </div>
     );
 }

@@ -72,23 +72,23 @@ const TodoCreate = ({ onSubmitHandler }) => {
   return (
     <InputArea>
       <InputWrapper>
-        <Label htmlFor="title">제목</Label>
+        <Label htmlFor="title">Title</Label>
         <Input
           type="text"
           value={title}
-          placeholder="제목"
+          placeholder="Title"
           onChange={(e) => {
             setTitle(e.target.value);
           }}
         />
       </InputWrapper>
       <InputWrapper>
-        <Label htmlFor="text">내용</Label>
+        <Label htmlFor="text">Text</Label>
         <Input
           className="text"
           type="text"
           value={text}
-          placeholder="할 일"
+          placeholder="Text"
           onChange={(e) => {
             setText(e.target.value);
           }}
