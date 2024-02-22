@@ -39,9 +39,9 @@ function Nav() {
   const { userLoggedIn } = useAuth();
 
   const menus = [
-    { name: "재활용", path: "/recycle" },
-    { name: "식습관", path: "/eating" },
-    { name: "전기절약", path: "/electric" }
+    { name: "Recycle", path: "/recycle" },
+    { name: "Eating Habits", path: "/eating" },
+    { name: "Saving Electricity", path: "/electric" }
   ];
 
   return (

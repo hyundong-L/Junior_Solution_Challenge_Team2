@@ -17,7 +17,7 @@ class LikeButton extends React.Component {
             :
             this.setState({
                 isChecked: true,
-                notice: '관심 +1',
+                notice: 'see',
             });
     }
     render() {

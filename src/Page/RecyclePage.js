@@ -89,13 +89,13 @@ function RecyclePage() {
         <TodoCreate onSubmitHandler={onSubmitHandler} />
         <TodoList
           todos={todos.filter((todo) => !todo.isDone)}
-          listTitle={'🔥 진행중 🔥'}
+          listTitle={'❤️‍🔥 Doing ❤️‍🔥'}
           onToggle={onToggleHandler}
           onDelete={onDeleteHandler}
         />
         <TodoList
           todos={todos.filter((todo) => todo.isDone)}
-          listTitle={'🎉 완료 🎉'}
+          listTitle={'🌚 Finish 🌚'}
           onToggle={onToggleHandler}
           onDelete={onDeleteHandler}
         />
